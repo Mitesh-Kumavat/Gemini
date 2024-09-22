@@ -183,6 +183,11 @@
 }
 
 @media (max-width:600px) {
+    .main-bottom {
+        margin-bottom: 30px;
+
+    }
+
     .main-bottom input {
         flex: none;
         width: 150px;
