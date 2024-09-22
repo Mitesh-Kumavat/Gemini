@@ -5,14 +5,14 @@ import { Context } from '../Context/Context'
 
 function Main() {
 
-    const { onSent, input, recentPrompt, showResult, loading, resultData, setInput } = useContext(Context)
+    const { onSent, input, newChat, recentPrompt, showResult, loading, resultData, setInput } = useContext(Context)
 
     return (
         <>
             <div className='main'>
                 <div className="nav">
-                    <p>Mitesh's Gemini</p>
-                    <img src={assets.user_icon} alt="" />
+                    <p onClick={() => newChat()} style={{ "cursor": "pointer" }} >Mitesh's Gemini</p>
+                    <img onClick={() => newChat()} src={assets.user_icon} alt="" style={{ "cursor": "pointer" }} />
                 </div>
 
                 <div className="main-container">
@@ -23,19 +23,19 @@ function Main() {
                             <p>How can i help you today ?</p>
                         </div>
                         <div className="cards">
-                            <div className="card">
+                            <div onClick={() => onSent("Suggest beautiful places to see on a upcoming road trip")} className="card">
                                 <p>Suggest beautiful places to see on a upcoming road trip</p>
                                 <img src={assets.compass_icon} alt="" />
                             </div>
-                            <div className="card">
-                                <p>Brefly summarize this concept : Urbanization</p>
+                            <div className="card" onClick={() => onSent("Breifly summarize this concept : Urbanization")} >
+                                <p>Breifly summarize this concept : Urbanization</p>
                                 <img src={assets.bulb_icon} alt="" />
                             </div>
-                            <div className="card">
+                            <div className="card" onClick={() => onSent("Brainstrom team bonding activities for our work retreat")} >
                                 <p>Brainstrom team bonding activities for our work retreat</p>
                                 <img src={assets.message_icon} alt="" />
                             </div>
-                            <div className="card">
+                            <div className="card" onClick={() => onSent("How to improve the redundancy of the production level code")} >
                                 <p>How to improve the redundancy of the production level code</p>
                                 <img src={assets.code_icon} alt="" />
                             </div>

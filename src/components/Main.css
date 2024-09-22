@@ -185,12 +185,11 @@
 @media (max-width:600px) {
     .main-bottom {
         margin-bottom: 30px;
-
     }
 
     .main-bottom input {
         flex: none;
-        width: 150px;
+        width: auto;
     }
 
     .main-bottom img {
@@ -198,10 +197,15 @@
     }
 
     .search-box {
+        height: fit-content;
         padding: 5px 10px;
     }
 
     .search-box div {
         gap: 5px;
+    }
+
+    .main .cards {
+        grid-template-columns: repeat(auto-fill, minmax(125px, 4fr));
     }
 }
