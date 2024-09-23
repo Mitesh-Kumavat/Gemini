@@ -184,7 +184,19 @@
 
 @media (max-width:600px) {
     .main-bottom {
+        position: fixed;
         margin-bottom: 30px;
+    }
+
+    .main .nav {
+        position: fixed;
+        width: 100vw;
+        background-color: white;
+        padding-bottom: 5px;
+    }
+
+    .result {
+        padding-top: 52px;
     }
 
     .main-bottom input {
