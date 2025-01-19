@@ -1,10 +1,8 @@
 import {
-    GoogleGenerativeAI,
-    HarmCategory,
-    HarmBlockThreshold,
+    GoogleGenerativeAI
 } from "@google/generative-ai";
 
-const apiKey = "AIzaSyBiCUgGEuf3Da9UXjZGNsvzfbas1czjd6Y";
+const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
 const genAI = new GoogleGenerativeAI(apiKey);
 
 const model = genAI.getGenerativeModel({
@@ -29,10 +27,9 @@ async function run(prompt) {
     try {
         const result = await chatSession.sendMessage(prompt);
         const response = result.response.text();
-        console.log(response);
         return response;
     } catch (error) {
-        console.log('error caught in Gemini api');
+        console.log('error caught in Gemini api', error);
     }
 }
 
