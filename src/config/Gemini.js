@@ -20,8 +20,7 @@ const generationConfig = {
 async function run(prompt) {
     const chatSession = model.startChat({
         generationConfig,
-        history: [
-        ],
+        history: [],
     });
 
     try {
@@ -29,7 +28,7 @@ async function run(prompt) {
         const response = result.response.text();
         return response;
     } catch (error) {
-        console.log('error caught in Gemini api', error);
+        console.log('error in Gemini : ', error);
     }
 }
 

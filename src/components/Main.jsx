@@ -5,11 +5,17 @@ import { Context } from '../Context/Context'
 
 function Main() {
 
+    const handleKey = (e) => {
+        if (e.key === 'Enter') {
+            onSent()
+        }
+    }
+
     const { onSent, input, newChat, recentPrompt, showResult, loading, resultData, setInput } = useContext(Context)
 
     return (
         <>
-            <div className='main'>
+            <div className='main' onKeyDown={(e) => handleKey(e)}>
                 <div className="nav">
                     <p onClick={() => newChat()} style={{ "cursor": "pointer" }} >Mitesh's Gemini</p>
                     <img onClick={() => newChat()} src={assets.user_icon} alt="" style={{ "cursor": "pointer" }} />
